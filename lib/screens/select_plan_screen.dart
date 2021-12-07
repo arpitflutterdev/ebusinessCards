@@ -1,8 +1,6 @@
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
 import 'package:flutter/material.dart';
 
-
-
 class SelectPlan extends StatefulWidget {
   const SelectPlan({Key? key}) : super(key: key);
 
@@ -45,10 +43,10 @@ class _SelectPlanState extends State<SelectPlan> {
                       Padding(
                           padding: const EdgeInsets.only(top: 20.0, bottom: 20),
                           child: greeting(context, 'Select Plan')),
-
                       selectPlans(context),
-                      SizedBox(height: 30,),
-
+                      const SizedBox(
+                        height: 30,
+                      ),
                       loginSignupButton(
                         context,
                         'Register',
@@ -69,11 +67,12 @@ class _SelectPlanState extends State<SelectPlan> {
     );
   }
 
-
-  Widget selectPlans(BuildContext context){
+  Widget selectPlans(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 15,),
+        const SizedBox(
+          width: 15,
+        ),
         Image.asset("assets/arrow.png"),
         Container(
           height: 230,
@@ -81,13 +80,15 @@ class _SelectPlanState extends State<SelectPlan> {
           color: Colors.grey,
           child: Column(
             children: [
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               Container(
                 height: 120,
                 width: 120,
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage("assets/calender.png"))
-                ),
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/calender.png"))),
               )
             ],
           ),

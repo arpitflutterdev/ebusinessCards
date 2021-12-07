@@ -1,3 +1,5 @@
+import 'package:ebusinesscards/utils/Strings.dart';
+import 'package:ebusinesscards/utils/colors.dart';
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -42,14 +44,15 @@ class _RegistrationState extends State<Registration> {
                       ),
                       Padding(
                           padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                          child: greeting(context, 'Welcome')),
+                          child: greeting(context, Strings().welcome)),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: Container(
                           height: 50,
                           width: 230,
                           decoration: BoxDecoration(
-                              border: Border.all(color: Color(0xff172A3A)),
+                              border:
+                                  Border.all(color: Colours().loginBoxColor),
                               borderRadius: BorderRadius.circular(5)),
                           child: Row(
                             children: [
@@ -70,27 +73,27 @@ class _RegistrationState extends State<Registration> {
                                   ],
                                 ),
                               ),
-                              const Text(
-                                "Name",
-                                style: TextStyle(
+                              Text(
+                                Strings().name,
+                                style: const TextStyle(
                                     fontSize: 24, fontWeight: FontWeight.w200),
                               )
                             ],
                           ),
                         ),
                       ),
-                      controller(context, "Email", "assets/mail1.png",
+                      controller(context, Strings().email, "assets/mail1.png",
                           "assets/mail2.png"),
-                      controller2(context, "Password", "assets/lock2.png",
+                      controller2(context, Strings().pass, "assets/lock2.png",
                           'assets/lock.png'),
                       controller2(context, "Repeat Password",
                           "assets/lock2.png", "assets/lock.png"),
-                      loginSignupButton(context, 'Continue'),
+                      loginSignupButton(context, Strings().Continue),
                       const SizedBox(
                         height: 10,
                       ),
-                      accountInfo(context, "Already have an account ?"),
-                      loginInfo(context, "Log In")
+                      accountInfo(context, Strings().accountInfo),
+                      loginInfo(context, Strings().loginInfo)
                     ],
                   ),
                 ),

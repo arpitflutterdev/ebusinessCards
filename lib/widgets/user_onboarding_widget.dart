@@ -1,3 +1,4 @@
+import 'package:ebusinesscards/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,7 @@ Widget controller(
       height: 50,
       width: 230,
       decoration: BoxDecoration(
-          border: Border.all(color: Color(0xff172A3A)),
+          border: Border.all(color: Colours().loginBoxColor),
           borderRadius: BorderRadius.circular(5)),
       child: Row(
         children: [
@@ -110,7 +111,7 @@ Widget controller2(
       height: 50,
       width: 230,
       decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xff172A3A)),
+          border: Border.all(color: Colours().loginBoxColor),
           borderRadius: BorderRadius.circular(5)),
       child: Row(
         children: [

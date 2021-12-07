@@ -1,3 +1,4 @@
+import 'package:ebusinesscards/utils/Strings.dart';
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -42,14 +43,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Padding(
                           padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                          child: greeting(context, 'Welcome back')),
-                      controller(context, "Email", "assets/mail1.png",
+                          child: greeting(context, Strings().welcomeback)),
+                      controller(context, Strings().email, "assets/mail1.png",
                           "assets/mail2.png"),
-                      controller2(context, "Password", "assets/lock2.png",
+                      controller2(context, Strings().pass, "assets/lock2.png",
                           'assets/lock.png'),
                       loginSignupButton(
                         context,
-                        'Login',
+                        Strings().login,
                       ),
                       const SizedBox(
                         height: 20,
