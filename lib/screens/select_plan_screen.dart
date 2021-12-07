@@ -1,14 +1,16 @@
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+
+
+class SelectPlan extends StatefulWidget {
+  const SelectPlan({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SelectPlanState createState() => _SelectPlanState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SelectPlanState extends State<SelectPlan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +22,10 @@ class _LoginScreenState extends State<LoginScreen> {
               backImage(context),
               eBusinessWidget(context),
               Positioned(
-                top: 300,
+                top: 230,
                 right: 30,
                 child: Container(
-                  height: 370,
+                  height: 467,
                   width: 300,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -42,20 +44,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Padding(
                           padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                          child: greeting(context, 'Welcome back')),
-                      controller(context, "Email", "assets/mail1.png",
-                          "assets/mail2.png"),
-                      controller2(context, "Password", "assets/lock2.png",
-                          'assets/lock.png'),
+                          child: greeting(context, 'Select Plan')),
+
+                      selectPlans(context),
+                      SizedBox(height: 30,),
+
                       loginSignupButton(
                         context,
-                        'Login',
+                        'Register',
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
-                      accountInfo(context, "Don't have an account yet ?"),
-                      loginInfo(context, "Create an account")
+                      accountInfo(context, "Already have an account ?"),
+                      loginInfo(context, "Log In")
                     ],
                   ),
                 ),
@@ -64,6 +66,34 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
+    );
+  }
+
+
+  Widget selectPlans(BuildContext context){
+    return Row(
+      children: [
+        SizedBox(width: 15,),
+        Image.asset("assets/arrow.png"),
+        Container(
+          height: 230,
+          width: 200,
+          color: Colors.grey,
+          child: Column(
+            children: [
+              SizedBox(height: 10,),
+              Container(
+                height: 120,
+                width: 120,
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/calender.png"))
+                ),
+              )
+            ],
+          ),
+        ),
+        Image.asset("assets/arrowright.png"),
+      ],
     );
   }
 }
