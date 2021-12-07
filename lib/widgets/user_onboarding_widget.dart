@@ -1,6 +1,8 @@
+import 'package:ebusinesscards/bloc/change_image_subscription_bloc.dart';
 import 'package:ebusinesscards/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 Widget backImage(BuildContext context) {
   return Container(
@@ -149,5 +151,24 @@ Widget loginInfo(BuildContext context, String text) {
       color: Colors.black54,
       fontWeight: FontWeight.w300,
     ),
+  );
+}
+
+
+Widget subscriptionPlan(BuildContext context,String imagePath1, String imagePath2, String imagePath3){
+  return Container(
+    child: BlocBuilder<ChangeImage, int>(
+        builder: (BuildContext context, int state){
+          if (state % 3 == 1) {
+            return Image.asset(imagePath1);
+          }
+          else if (state % 3 == 2) {
+            return Image.asset(imagePath2);
+          }
+          else if(state % 3 == 0){
+            return Image.asset(imagePath3);
+          }
+          else return Container();
+        }),
   );
 }

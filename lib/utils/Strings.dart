@@ -10,4 +10,5 @@ class Strings {
   final String loginInfo = "Log In";
   final String name = "Name";
   final String Continue = "Continue";
+  final String register = "Register";
 }
