@@ -156,8 +156,7 @@ Widget loginInfo(BuildContext context, String text) {
 
 
 Widget subscriptionPlan(BuildContext context,String imagePath1, String imagePath2, String imagePath3){
-  return Container(
-    child: BlocBuilder<ChangeImage, int>(
+  return BlocBuilder<ChangeImage, int>(
         builder: (BuildContext context, int state){
           if (state % 3 == 1) {
             return Image.asset(imagePath1);
@@ -169,6 +168,6 @@ Widget subscriptionPlan(BuildContext context,String imagePath1, String imagePath
             return Image.asset(imagePath3);
           }
           else return Container();
-        }),
-  );
+        });
 }
+

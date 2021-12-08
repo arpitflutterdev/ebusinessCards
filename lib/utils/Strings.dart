@@ -11,4 +11,5 @@ class Strings {
   final String name = "Name";
   final String Continue = "Continue";
   final String register = "Register";
+  final String plan = "Select Plan";
 }

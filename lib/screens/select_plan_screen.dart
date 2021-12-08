@@ -1,4 +1,5 @@
 import 'package:ebusinesscards/bloc/change_image_subscription_bloc.dart';
+import 'package:ebusinesscards/screens/category_screen.dart';
 import 'package:ebusinesscards/utils/Strings.dart';
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
 import 'package:flutter/material.dart';
@@ -46,14 +47,17 @@ class _SelectPlanState extends State<SelectPlan> {
                       ),
                       Padding(
                           padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                          child: greeting(context, 'Select Plan')),
+                          child: greeting(context, Strings().plan)),
                       selectPlans(context),
                       const SizedBox(
                         height: 30,
                       ),
-                      loginSignupButton(
-                        context,
-                        Strings().register,
+                      InkWell(
+                        onTap: () => Navigator.pushNamed(context, '/categories'),
+                        child: loginSignupButton(
+                          context,
+                          Strings().register,
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
@@ -78,21 +82,7 @@ class _SelectPlanState extends State<SelectPlan> {
         const SizedBox(
           width: 15,
         ),
-        GestureDetector(
-            onTap: (){
-              if(num % 3 == 1){
-                _imageVar.add(ImageUpdater.zero);
-              }
-              else if(num % 3 == 2){
-                _imageVar.add(ImageUpdater.one);
-              }
-              else if(num % 3 == 0){
-                _imageVar.add(ImageUpdater.two);
-              }
-              setState(() {
-                num = num +1;
-              });
-            },            child: Image.asset("assets/arrow.png")),
+        gestureDetector(_imageVar, "assets/arrow.png"),
         Container(
           height: 230,
           width: 190,
@@ -109,51 +99,51 @@ class _SelectPlanState extends State<SelectPlan> {
                     image: DecorationImage(
                         image: AssetImage("assets/calender.png"))),
 
-                child: BlocBuilder<ChangeImage, int>(
-                    builder: (BuildContext context, int state){
-                      if (state % 3 == 1) {
-                        return Image.asset('assets/six.png');
-                      }
-                      else if (state % 3 == 2) {
-                        return Image.asset('assets/twelve.png');
-                      }
-                      else if(state % 3 == 0){
-                        return Image.asset("assets/one.png");
-                      }
-                      else return Container();
-                    }),
+                child:
+                subscriptionPlan(context,
+                    "assets/six.png",
+                    "assets/twelve.png",
+                    "assets/one.png"),
               ),
               SizedBox(height: 5,),
-              subscriptionPlan(context,
-                  "assets/halfyearsubscription.png",
-                  "assets/yearsubscription.png",
-                  "assets/monthsubscription.png"),
+              Container(
+                child: subscriptionPlan(context,
+                    "assets/halfyearsubscription.png",
+                    "assets/yearsubscription.png",
+                    "assets/monthsubscription.png"),
+              ),
 
-              subscriptionPlan(context,
-                  "assets/sixmonthbill.png",
-                  "assets/yearbill.png",
-                  "assets/monthbill.png")
+              Container(
+                child: subscriptionPlan(context,
+                    "assets/sixmonthbill.png",
+                    "assets/yearbill.png",
+                    "assets/monthbill.png"),
+              )
               //here to paste container
             ],
           ),
         ),
-        GestureDetector(
-          onTap: (){
-            if(num % 3 == 1){
-              _imageVar.add(ImageUpdater.zero);
-            }
-            else if(num % 3 == 2){
-              _imageVar.add(ImageUpdater.one);
-            }
-            else if(num % 3 == 0){
-              _imageVar.add(ImageUpdater.two);
-            }
-            setState(() {
-              num = num +1;
-            });
-          },
-            child: Image.asset("assets/arrowright.png")),
+        gestureDetector(_imageVar,"assets/arrowright.png"),
       ],
     );
+  }
+
+  GestureDetector gestureDetector(ChangeImage _imageVar,String imgPath) {
+    return GestureDetector(
+        onTap: (){
+          if(num % 3 == 1){
+            _imageVar.add(ImageUpdater.zero);
+          }
+          else if(num % 3 == 2){
+            _imageVar.add(ImageUpdater.one);
+          }
+          else if(num % 3 == 0){
+            _imageVar.add(ImageUpdater.two);
+          }
+          setState(() {
+            num = num +1;
+          });
+        },
+          child: Image.asset(imgPath));
   }
 }
