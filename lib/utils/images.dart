@@ -14,5 +14,8 @@ class Images{
   final String gastro = "assets/Gastro.png";
   final String group =  "assets/Group.png";
   final String rectUpper = "assets/rectangleupper.png";
+  final String cemail = "assets/cemail.png";
+  final String cchat = "assets/cchat.png";
+  final String cphone = "assets/cphone.png";
 
 }

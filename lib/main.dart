@@ -1,7 +1,9 @@
 import 'package:ebusinesscards/bloc/login_bloc.dart';
 import 'package:ebusinesscards/screens/category_screen.dart';
+import 'package:ebusinesscards/screens/item_category.dart';
 import 'package:ebusinesscards/screens/login_screen.dart';
 import 'package:ebusinesscards/screens/registration.dart';
+import 'package:ebusinesscards/screens/select_category.dart';
 import 'package:ebusinesscards/screens/select_plan_screen.dart';
 import 'package:ebusinesscards/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +26,11 @@ class MyApp extends StatelessWidget {
         // home: BlocProvider(
         //     create: (_)=> ChangeImage(0),
         //     child: SelectPlan()),
-        initialRoute: '/',
+        initialRoute: '/third',
         routes: {
           '/' : (context) => const Categories(),
+          '/second' : (context) =>  SelectCategory(),
+          '/third' : (context) =>  ItemCategory(),
 
         },
         ),

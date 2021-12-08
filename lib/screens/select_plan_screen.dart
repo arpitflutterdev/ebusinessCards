@@ -52,13 +52,11 @@ class _SelectPlanState extends State<SelectPlan> {
                       const SizedBox(
                         height: 30,
                       ),
-                      InkWell(
-                        onTap: () => Navigator.pushNamed(context, '/categories'),
-                        child: loginSignupButton(
+                       loginSignupButton(
                           context,
                           Strings().register,
                         ),
-                      ),
+
                       const SizedBox(
                         height: 10,
                       ),

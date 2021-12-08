@@ -28,3 +28,28 @@ BoxDecoration rectangleDecoration(String imagePath) {
       image:
       DecorationImage(fit: BoxFit.cover, image: AssetImage(imagePath)));
 }
+
+Container contactWidgets(String imagePath) {
+  return Container(
+    height: 50,
+    width: 50,
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(
+                imagePath
+            )
+        )
+    ),
+  );
+}
+Container cardView(String imgPath) {
+  return Container(
+    height: 320,
+    width: 320,
+    decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(imgPath),
+        )
+    ),
+  );
+}
