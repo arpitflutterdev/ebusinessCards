@@ -1,4 +1,4 @@
-import 'package:ebusinesscards/bloc/change_image_subscription_bloc.dart';
+import 'package:ebusinesscards/bloc/change_subscription_plan/change_image_subscription_bloc.dart';
 import 'package:ebusinesscards/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ Widget greeting(BuildContext context, String text) {
 Widget loginSignupButton(BuildContext context, String text) {
   return Container(
     height: 55,
-    width: 230,
+    width: 270,
     decoration: BoxDecoration(
         image: const DecorationImage(
             image: AssetImage(
@@ -74,67 +74,6 @@ Widget loginSignupButton(BuildContext context, String text) {
   );
 }
 
-Widget controller(
-    BuildContext context, String text, String imagePath2, String imagePath1) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 8.0),
-    child: Container(
-      height: 50,
-      width: 230,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colours().loginBoxColor),
-          borderRadius: BorderRadius.circular(5)),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                Image.asset(imagePath2),
-                Image.asset(imagePath1),
-              ],
-            ),
-          ),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w200),
-          )
-        ],
-      ),
-    ),
-  );
-}
-
-Widget controller2(
-    BuildContext context, String text, String imagePath2, String imagePath1) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 8.0),
-    child: Container(
-      height: 50,
-      width: 230,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colours().loginBoxColor),
-          borderRadius: BorderRadius.circular(5)),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Image.asset(imagePath2),
-                Image.asset(imagePath1),
-              ],
-            ),
-          ),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w200),
-          )
-        ],
-      ),
-    ),
-  );
-}
 
 Widget accountInfo(BuildContext context, String text) {
   return Text(text,

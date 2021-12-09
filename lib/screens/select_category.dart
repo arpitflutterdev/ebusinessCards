@@ -61,6 +61,8 @@ class _SelectCategoryState extends State<SelectCategory> {
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                 ),
               ),
+
+              //Card functionality implementation has to be done here.
               Positioned(
                 top: 270,
                 left: 40,
@@ -72,6 +74,7 @@ class _SelectCategoryState extends State<SelectCategory> {
                       borderRadius: BorderRadius.circular(20.0)),
                 ),
               ),
+
               Positioned(
                 top: 620,
                 child: Container(

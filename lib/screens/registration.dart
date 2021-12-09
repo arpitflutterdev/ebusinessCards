@@ -45,49 +45,10 @@ class _RegistrationState extends State<Registration> {
                       Padding(
                           padding: const EdgeInsets.only(top: 20.0, bottom: 20),
                           child: greeting(context, Strings().welcome)),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Container(
-                          height: 50,
-                          width: 230,
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: Colours().loginBoxColor),
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Stack(
-                                  children: [
-                                    Image.asset("assets/name_bound.png"),
-                                    Positioned(
-                                        top: 14,
-                                        left: 3,
-                                        child: Image.asset(
-                                            "assets/name_middle.png")),
-                                    Positioned(
-                                        top: 3,
-                                        left: 8,
-                                        child: Image.asset("assets/name.png")),
-                                  ],
-                                ),
-                              ),
-                              Text(
-                                Strings().name,
-                                style: const TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.w200),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      controller(context, Strings().email, "assets/mail1.png",
-                          "assets/mail2.png"),
-                      controller2(context, Strings().pass, "assets/lock2.png",
-                          'assets/lock.png'),
-                      controller2(context, "Repeat Password",
-                          "assets/lock2.png", "assets/lock.png"),
+                      _nameController(),
+                      _emailController(),
+                      _passwordController(),
+                      _repeatpasswordController(),
                       loginSignupButton(context, Strings().Continue),
                       const SizedBox(
                         height: 10,
@@ -103,5 +64,154 @@ class _RegistrationState extends State<Registration> {
         ),
       ),
     );
+  }
+
+  Widget _nameController(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Container(
+        height: 50,
+        width: 270,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colours().loginBoxColor),
+            borderRadius: BorderRadius.circular(5)),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Image.asset("assets/nameController.png"),
+                ],
+              ),
+            ),
+            Container(
+              width: 228,
+              height: 30,
+              child: const TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Name",
+                  isDense: true,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+  }
+  Widget _emailController(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Container(
+        height: 50,
+        width: 270,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colours().loginBoxColor),
+            borderRadius: BorderRadius.circular(5)),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Stack(
+                children: [
+                  Image.asset("assets/mail1.png"),
+                  Image.asset("assets/mail2.png"),
+                ],
+              ),
+            ),
+            Container(
+              width: 228,
+              height: 30,
+              child: const TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Email",
+                  isDense: true,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+  }
+  Widget _passwordController(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Container(
+        height: 50,
+        width: 270,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colours().loginBoxColor),
+            borderRadius: BorderRadius.circular(5)),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Image.asset("assets/lock2.png",),
+                  Image.asset('assets/lock.png'),
+                ],
+              ),
+            ),
+            Container(
+              width: 228,
+              height: 30,
+              child: const TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Password",
+                  isDense: true,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+  }
+  Widget _repeatpasswordController(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Container(
+        height: 50,
+        width: 270,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colours().loginBoxColor),
+            borderRadius: BorderRadius.circular(5)),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Image.asset("assets/lock2.png",),
+                  Image.asset('assets/lock.png'),
+                ],
+              ),
+            ),
+            Container(
+              width: 228,
+              height: 30,
+              child: const TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Repeat Password",
+                  isDense: true,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
   }
 }

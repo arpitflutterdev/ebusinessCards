@@ -1,4 +1,4 @@
-import 'package:ebusinesscards/bloc/login_bloc.dart';
+import 'package:ebusinesscards/bloc/cred_operations/auth_bloc.dart';
 import 'package:ebusinesscards/screens/category_screen.dart';
 import 'package:ebusinesscards/screens/item_category.dart';
 import 'package:ebusinesscards/screens/login_screen.dart';
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
-import 'bloc/change_image_subscription_bloc.dart';
+import 'bloc/change_subscription_plan/change_image_subscription_bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<LoginBloc>(create: (context) => LoginBloc(),),
+        Provider<AuthBloc>(create: (context) => AuthBloc(),),
       ],
       child: MaterialApp(
         // home: BlocProvider(
@@ -29,8 +29,10 @@ class MyApp extends StatelessWidget {
         initialRoute: '/third',
         routes: {
           '/' : (context) => const Categories(),
+          '/first' : (context) => const LoginScreen(),
           '/second' : (context) =>  SelectCategory(),
           '/third' : (context) =>  ItemCategory(),
+          '/fourth' : (context) => Registration(),
 
         },
         ),

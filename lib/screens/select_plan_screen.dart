@@ -1,4 +1,4 @@
-import 'package:ebusinesscards/bloc/change_image_subscription_bloc.dart';
+import 'package:ebusinesscards/bloc/change_subscription_plan/change_image_subscription_bloc.dart';
 import 'package:ebusinesscards/screens/category_screen.dart';
 import 'package:ebusinesscards/utils/Strings.dart';
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
