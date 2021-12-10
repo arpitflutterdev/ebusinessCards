@@ -1,8 +1,7 @@
 import 'dart:async';
 
 class ValidationMixin {
-  // with Provider state
-  final validatorEmail = new StreamTransformer<String, String>.fromHandlers(
+  final validatorEmail = StreamTransformer<String, String>.fromHandlers(
     handleData: (email, sink) {
       if (ValidationMixin()._validateEmail(email)) {
         sink.addError('Emmail is not valid');
@@ -12,7 +11,7 @@ class ValidationMixin {
     },
   );
 
-  final validatorPassword = new StreamTransformer<String, String>.fromHandlers(
+  final validatorPassword = StreamTransformer<String, String>.fromHandlers(
     handleData: (password, sink) {
       if (!ValidationMixin()._validatePassword(password)) {
         sink.addError('Password is not valid!');
@@ -21,9 +20,9 @@ class ValidationMixin {
       }
     },
   );
-  // without Provider state
+
   bool _validateEmail(String email) {
-    var regExp = new RegExp(
+    var regExp = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
     if (regExp.hasMatch(email)) {
       return false;

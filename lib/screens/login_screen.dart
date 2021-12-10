@@ -1,6 +1,8 @@
+import 'package:ebusinesscards/screens/list_templates_screen.dart';
 import 'package:ebusinesscards/utils/Strings.dart';
 import 'package:ebusinesscards/utils/colors.dart';
 import 'package:ebusinesscards/widgets/user_onboarding_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -47,9 +49,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: greeting(context, Strings().welcomeback)),
                       _emailController(),
                       _passwordController(),
-                      loginSignupButton(
-                        context,
-                        Strings().login,
+                      GestureDetector(
+                        behavior: HitTestBehavior.translucent,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ListTemplates())),
+                        child: loginSignupButton(
+                          context,
+                          Strings().login,
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
