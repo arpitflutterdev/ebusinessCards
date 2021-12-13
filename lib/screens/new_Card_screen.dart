@@ -34,7 +34,6 @@ class _NewCardState extends State<NewCard> {
                   ],
                 ),
               ),
-
                Positioned(
                  top: 120,left: 20,
                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,8 +64,6 @@ class _NewCardState extends State<NewCard> {
                   ],
                 ),
               ),
-
-
               Padding(
                 padding: const EdgeInsets.only(top: 260.0, left: 20),
                 child: Row(crossAxisAlignment: CrossAxisAlignment.end,
@@ -184,6 +181,6 @@ class _NewCardState extends State<NewCard> {
           ),
         ),
       ),
-    );;
+    );
   }
 }

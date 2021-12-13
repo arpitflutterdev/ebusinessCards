@@ -1,10 +1,12 @@
 import 'package:ebusinesscards/bloc/cred_operations/auth_bloc.dart';
 import 'package:ebusinesscards/screens/category_screen.dart';
+import 'package:ebusinesscards/screens/edit_profile.dart';
 import 'package:ebusinesscards/screens/item_category.dart';
 import 'package:ebusinesscards/screens/list_templates_screen.dart';
 import 'package:ebusinesscards/screens/login_screen.dart';
 import 'package:ebusinesscards/screens/my_cards_screen.dart';
 import 'package:ebusinesscards/screens/new_Card_screen.dart';
+import 'package:ebusinesscards/screens/profile_screen.dart';
 import 'package:ebusinesscards/screens/registration.dart';
 import 'package:ebusinesscards/screens/select_category.dart';
 import 'package:ebusinesscards/screens/select_plan_screen.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         // home: BlocProvider(
         //     create: (_)=> ChangeImage(0),
         //     child: SelectPlan()),
-        initialRoute: '/eighth',
+        initialRoute: '/tenth',
         routes: {
           '/' : (context) => const Categories(),
           '/first' : (context) => const LoginScreen(),
@@ -40,6 +42,8 @@ class MyApp extends StatelessWidget {
           '/sixth' : (context) => ListTemplates(),
           '/seventh' : (context) => SplashScreen(),
           '/eighth' : (context) => NewCard(),
+          '/ninth' : (context) => Profile(),
+          '/tenth' : (context) => EditProfile(),
 
        },
         ),
